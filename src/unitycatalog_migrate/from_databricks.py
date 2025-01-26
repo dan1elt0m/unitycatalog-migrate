@@ -1,3 +1,4 @@
+from __future__ import annotations
 import typer
 from databricks.sdk import WorkspaceClient
 from typer import Typer

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import os
 
 from databricks.sdk import WorkspaceClient
