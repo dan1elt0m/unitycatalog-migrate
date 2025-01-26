@@ -1,0 +1,28 @@
+[project]
+name = "ucm"
+version = "0.1.0"
+description = "Migrate tables Unity Catalog"
+authors = [{name="Daniël Tom", email="d.e.tom89@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "databricks-sdk>=0.41.0",
+    "typer>=0.15.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+ucm = "ucm.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4.4",
+    "pytest-asyncio>=0.23.8",
+    "pytest-coverage>=0.0",
+    "ruff>=0.9.3",
+    "testcontainers>=4.9.1",
+    "unitycatalog-pydantic>=0.1.0",
+]
