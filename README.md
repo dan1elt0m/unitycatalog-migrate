@@ -20,7 +20,7 @@ Unity Catalog Migrator is a tool to migrate catalogs, schemas, and tables from D
 To install the Unity Catalog Migrator, you can use the following commands:
 
 ```shell
-pip install ucm
+pip install unitycatalog-migrate
 ```
 
 

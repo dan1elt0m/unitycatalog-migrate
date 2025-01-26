@@ -1,9 +1,6 @@
 import asyncio
 from functools import wraps
 from typing import Tuple, Coroutine
-import tracemalloc
-
-tracemalloc.start()
 
 from rich.console import Console
 from rich.live import Live
@@ -19,6 +16,7 @@ RESULT = {
 
 console = Console()
 
+
 def coro(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
@@ -26,9 +24,18 @@ def coro(f):
             return asyncio.create_task(f(*args, **kwargs))
         else:
             return asyncio.run(f(*args, **kwargs))
+
     return wrapper
 
-async def handle_task(task, name: str, success_tasks: list[Tuple[str, str]], failed_tasks: list[Tuple[str, str]], skipped_tasks: list[Tuple[str, str]], live):
+
+async def handle_task(
+    task,
+    name: str,
+    success_tasks: list[Tuple[str, str]],
+    failed_tasks: list[Tuple[str, str]],
+    skipped_tasks: list[Tuple[str, str]],
+    live,
+):
     """Handle task execution"""
     with live:
         try:
@@ -48,6 +55,7 @@ async def handle_task(task, name: str, success_tasks: list[Tuple[str, str]], fai
 
         console.log(f"[{result}] {name}")
 
+
 async def run_migration_tasks(tasks: list[Tuple[str, Coroutine]]):
     """Run migration tasks and summarize results"""
     success_tasks = []
@@ -56,7 +64,11 @@ async def run_migration_tasks(tasks: list[Tuple[str, Coroutine]]):
     run_tasks = []
     with console.status("[bold green] Migrating..."), Live() as live:
         for name, task in tasks:
-            run_tasks.append(handle_task(task, name, success_tasks, failed_tasks, skipped_tasks, live))
+            run_tasks.append(
+                handle_task(
+                    task, name, success_tasks, failed_tasks, skipped_tasks, live
+                )
+            )
         await asyncio.gather(*run_tasks, return_exceptions=False)
 
     summarize(success_tasks, failed_tasks, skipped_tasks)

@@ -1,17 +1,29 @@
 import pytest
 from unittest.mock import patch, MagicMock
 
-from databricks.sdk.service.catalog import ColumnInfo, SchemaInfo, TableInfo, ColumnTypeName, TableType, \
-    DataSourceFormat
+from databricks.sdk.service.catalog import (
+    ColumnInfo,
+    SchemaInfo,
+    TableInfo,
+    ColumnTypeName,
+    TableType,
+    DataSourceFormat,
+)
 
-from unitycatalog_migrate.from_databricks import migrate_catalog, migrate_schema, migrate_table
+from unitycatalog_migrate.from_databricks import (
+    migrate_catalog,
+    migrate_schema,
+    migrate_table,
+)
 
 
 @pytest.mark.asyncio
 @patch("unitycatalog_migrate.from_databricks.WorkspaceClient")
 async def test_migrate_catalog(mock_workspace_client, catalogs_api):
     mock_workspace = MagicMock()
-    mock_workspace.catalogs.get.return_value = MagicMock(name="test_catalog", comment="Test Catalog")
+    mock_workspace.catalogs.get.return_value = MagicMock(
+        name="test_catalog", comment="Test Catalog"
+    )
     mock_workspace_client.return_value = mock_workspace
 
     result = await migrate_catalog(
