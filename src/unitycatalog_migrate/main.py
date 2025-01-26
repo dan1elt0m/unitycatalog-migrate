@@ -1,7 +1,7 @@
 import asyncio
 from typer import Typer
 
-from ucm.from_databricks import databricks
+from unitycatalog_migrate.from_databricks import databricks
 
 app = Typer(name="Unity Catalog Migrator", pretty_exceptions_show_locals=False)
 

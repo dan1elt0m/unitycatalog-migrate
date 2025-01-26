@@ -1,4 +1,4 @@
-from ucm import uc
+from unitycatalog_migrate import uc
 
 def test_get_host_url(monkeypatch):
     monkeypatch.setenv("UC_HOST_URL", "http://testhost:8080/api/2.1/unity-catalog")

@@ -6,8 +6,8 @@ from unitycatalog.client import (
     SchemasApi,
     TablesApi,
 )
-from ucm.coro import coro, run_migration_tasks
-from ucm.uc import get_uc_client, create_catalog, create_schema, create_table
+from unitycatalog_migrate.coro import coro, run_migration_tasks
+from unitycatalog_migrate.uc import get_uc_client, create_catalog, create_schema, create_table
 from typing import List
 
 databricks = Typer()

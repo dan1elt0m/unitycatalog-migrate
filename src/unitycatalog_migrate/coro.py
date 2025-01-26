@@ -8,8 +8,8 @@ tracemalloc.start()
 from rich.console import Console
 from rich.live import Live
 
-from ucm.output import print_skipped, summarize, print_errors
-from ucm.uc import SystemCatalogError
+from unitycatalog_migrate.output import print_skipped, summarize, print_errors
+from unitycatalog_migrate.uc import SystemCatalogError
 
 RESULT = {
     "SUCCESS": "[green] Success [reset]",

@@ -1109,7 +1109,40 @@ wheels = [
 ]
 
 [[package]]
-name = "ucm"
+name = "unitycatalog-ai"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "asyncio" },
+    { name = "nest-asyncio" },
+    { name = "pydantic" },
+    { name = "typing-extensions" },
+    { name = "unitycatalog-client" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0d/12/2da71d7fe7e246a647b9286da1a9207ba889d19cbe60819bd68f9cd346db/unitycatalog_ai-0.1.0.tar.gz", hash = "sha256:87b8d0afb0c768c75abf9a9f1c7a1d37c96b3106428b3e9da2f6e334bb699f01", size = 36566 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a2/bc/9c1d79c6ebd3cf55f3810b503d3ebd74b10da9d174bf189fc6a331f84e31/unitycatalog_ai-0.1.0-py3-none-any.whl", hash = "sha256:54511a3b8086f8ade3d5e5c383eed539bbfee2ccc8676594b95c1b576f4cd23b", size = 43878 },
+]
+
+[[package]]
+name = "unitycatalog-client"
+version = "0.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "aiohttp-retry" },
+    { name = "pydantic" },
+    { name = "python-dateutil" },
+    { name = "typing-extensions" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ab/fc/b479fd3a932301745da7ed39aa25105e74fb1d917b8fd74fb82b495e667f/unitycatalog_client-0.2.1.tar.gz", hash = "sha256:4d4ccbf20e94d282627234c7ae6ffba2d401dad2e821edc3a14d950a075aefe7", size = 50960 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9f/6a/3f1a8380134281bb31a0b8fa662da262d42dee984f78f5864b3ab5590cc3/unitycatalog_client-0.2.1-py3-none-any.whl", hash = "sha256:096e241c1597522c0a8d12f268942bd7ea85a1e5cafd17cc54dca00c42012cd7", size = 131784 },
+]
+
+[[package]]
+name = "unitycatalog-migrate"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
@@ -1141,39 +1174,6 @@ dev = [
     { name = "ruff", specifier = ">=0.9.3" },
     { name = "testcontainers", specifier = ">=4.9.1" },
     { name = "unitycatalog-pydantic", specifier = ">=0.1.0" },
-]
-
-[[package]]
-name = "unitycatalog-ai"
-version = "0.1.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "asyncio" },
-    { name = "nest-asyncio" },
-    { name = "pydantic" },
-    { name = "typing-extensions" },
-    { name = "unitycatalog-client" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/0d/12/2da71d7fe7e246a647b9286da1a9207ba889d19cbe60819bd68f9cd346db/unitycatalog_ai-0.1.0.tar.gz", hash = "sha256:87b8d0afb0c768c75abf9a9f1c7a1d37c96b3106428b3e9da2f6e334bb699f01", size = 36566 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a2/bc/9c1d79c6ebd3cf55f3810b503d3ebd74b10da9d174bf189fc6a331f84e31/unitycatalog_ai-0.1.0-py3-none-any.whl", hash = "sha256:54511a3b8086f8ade3d5e5c383eed539bbfee2ccc8676594b95c1b576f4cd23b", size = 43878 },
-]
-
-[[package]]
-name = "unitycatalog-client"
-version = "0.2.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "aiohttp" },
-    { name = "aiohttp-retry" },
-    { name = "pydantic" },
-    { name = "python-dateutil" },
-    { name = "typing-extensions" },
-    { name = "urllib3" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/ab/fc/b479fd3a932301745da7ed39aa25105e74fb1d917b8fd74fb82b495e667f/unitycatalog_client-0.2.1.tar.gz", hash = "sha256:4d4ccbf20e94d282627234c7ae6ffba2d401dad2e821edc3a14d950a075aefe7", size = 50960 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/9f/6a/3f1a8380134281bb31a0b8fa662da262d42dee984f78f5864b3ab5590cc3/unitycatalog_client-0.2.1-py3-none-any.whl", hash = "sha256:096e241c1597522c0a8d12f268942bd7ea85a1e5cafd17cc54dca00c42012cd7", size = 131784 },
 ]
 
 [[package]]

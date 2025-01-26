@@ -4,11 +4,11 @@ from unittest.mock import patch, MagicMock
 from databricks.sdk.service.catalog import ColumnInfo, SchemaInfo, TableInfo, ColumnTypeName, TableType, \
     DataSourceFormat
 
-from ucm.from_databricks import migrate_catalog, migrate_schema, migrate_table
+from unitycatalog_migrate.from_databricks import migrate_catalog, migrate_schema, migrate_table
 
 
 @pytest.mark.asyncio
-@patch("ucm.from_databricks.WorkspaceClient")
+@patch("unitycatalog_migrate.from_databricks.WorkspaceClient")
 async def test_migrate_catalog(mock_workspace_client, catalogs_api):
     mock_workspace = MagicMock()
     mock_workspace.catalogs.get.return_value = MagicMock(name="test_catalog", comment="Test Catalog")
@@ -26,7 +26,7 @@ async def test_migrate_catalog(mock_workspace_client, catalogs_api):
 
 
 @pytest.mark.asyncio
-@patch("ucm.from_databricks.WorkspaceClient")
+@patch("unitycatalog_migrate.from_databricks.WorkspaceClient")
 async def test_migrate_schema(mock_workspace_client, schemas_api, test_catalog):
     mock_workspace = MagicMock()
     mock_workspace.schemas.get.return_value = SchemaInfo(
@@ -50,7 +50,7 @@ async def test_migrate_schema(mock_workspace_client, schemas_api, test_catalog):
 
 
 @pytest.mark.asyncio
-@patch("ucm.from_databricks.WorkspaceClient")
+@patch("unitycatalog_migrate.from_databricks.WorkspaceClient")
 async def test_migrate_table(mock_workspace_client, tables_api, test_schema):
     mock_workspace = MagicMock()
     mock_workspace.tables.get.return_value = TableInfo(

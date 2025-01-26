@@ -1,7 +1,7 @@
 [project]
-name = "ucm"
+name = "unitycatalog-migrate"
 version = "0.1.0"
-description = "Migrate tables Unity Catalog"
+description = "Migrate catalogs from Databricks to Unity Catalog"
 authors = [{name="Daniël Tom", email="d.e.tom89@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.9"
