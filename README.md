@@ -31,15 +31,15 @@ pip install unitycatalog-migrate
 To migrate catalogs, use the following command:
 
 ```shell
-ucm databricks migrate-catalog --names catalog1 catalog2 --profile <databricks-profile> 
+ucm databricks migrate-catalog catalog1 catalog2 --profile <databricks-profile> 
 ```
 
 ### Migrate Schemas
 ```shell
-ucm databricks migrate-schemas --catalog catalog1 --profile <databricks-profile> 
+ucm databricks migrate-schemas schema1 schema2 --profile <databricks-profile> 
 ```
 
 ### Migrate Tables
 ```shell
-ucm databricks migrate-tables --catalog catalog1 --schema schema1 --profile <databricks-profile>  
+ucm databricks migrate-tables table1 table2  --profile <databricks-profile>  
 ```
