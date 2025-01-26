@@ -11,8 +11,6 @@ Unity Catalog Migrator is a tool to migrate catalogs, schemas, and tables from D
 ## Requirements
 
 - Python 3.9 or higher
-- Databricks SDK
-- Typer
 - Databricks configuration file: https://docs.databricks.com/en/dev-tools/auth/config-profiles.html 
 
 ## Installation
