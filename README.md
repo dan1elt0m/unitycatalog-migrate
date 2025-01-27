@@ -56,6 +56,38 @@ ucm migrate-schema catalog1.schema1 --profile DATABRICKS_TEST
 table_names=$(databricks tables list catalog1 schema1 --profile DATABRICKS_TEST | awk 'NR>1 {print $1}' | paste -sd ' ' -)
 # Migrate the tables to Unity Catalog using 
 echo $table_names | xargs ucm migrate-table --profile DATABRICKS_TEST 
+
+[13:45:46] [ Success ] catalog1.schema1.table1                                                                                                                                     
+           [ Success ] catalog1.schema1.table2                                                                                                                        
+           [ Success ] catalog1.schema1.table3                                                                                                                        
+           [ Success ] catalog1.schema1.table4                                                                                                                        
+           [ Success ] catalog1.schema1.table5                                                                                                                        
+           [ Skipped ] catalog1.schema1.table6                                                                                                                        
+           [ Success ] catalog1.schema1.table7                                                                                                                        
+           [ Failed  ] catalog1.schema1.table8                                                                                                                        
+┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Result                ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ Successfully migrated │ 6     │
+│ Skipped               │ 1     │
+│ Errors                │ 1     │
+└───────────────────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Skipped                              ┃ Reason                       ┃ 
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ catalog1.schema1.table6              │ Table already Exists         ┃
+│                                      │                              ┃ 
+└──────────────────────────────────────┴──────────────────────────────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Error                                ┃ Reason                       ┃ 
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ catalog1.schema1.table8              │ Variant Type not supported   ┃
+│                                      │                              ┃ 
+└──────────────────────────────────────┴──────────────────────────────┘
+
+
 ```
 
 ### Not supported:
