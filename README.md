@@ -1,4 +1,8 @@
+[![test](https://github.com/dan1elt0m/unitycatalog-migrate/actions/workflows/test.yml/badge.svg)](https://github.com/dan1elt0m/unitycatalog-migrate/actions/workflows/test.yml)
+![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fdan1elt0m%2Funitycatalog-migrate%2Fmain%2Fpyproject.toml)
+
 # Unity Catalog Migrate
+> **Disclaimer: This project is unofficial and not affiliated with or endorsed by the official Unity Catalog team.**
 
 Migrate catalogs, schemas, and tables from Databricks to Unity Catalog.
 
