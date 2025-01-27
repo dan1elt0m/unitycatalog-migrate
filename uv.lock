@@ -146,15 +146,6 @@ wheels = [
 ]
 
 [[package]]
-name = "asyncio"
-version = "3.4.3"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/da/54/054bafaf2c0fb8473d423743e191fcdf49b2c1fd5e9af3524efbe097bafd/asyncio-3.4.3.tar.gz", hash = "sha256:83360ff8bc97980e4ff25c964c7bd3923d333d177aa4f7fb736b019f26c7cb41", size = 204411 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/22/74/07679c5b9f98a7cb0fc147b1ef1cc1853bc07a4eb9cb5731e24732c5f773/asyncio-3.4.3-py3-none-any.whl", hash = "sha256:c4d18b22701821de07bd6aea8b53d21449ec0ec5680645e5317062ea21817d2d", size = 101767 },
-]
-
-[[package]]
 name = "attrs"
 version = "25.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -608,15 +599,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/86/99/e82e1a275d8b1ea16d3a251474262258dbbe41c05cce0c01bceda1fc8ea5/multidict-6.1.0-cp39-cp39-win32.whl", hash = "sha256:1ca0083e80e791cffc6efce7660ad24af66c8d4079d2a750b29001b53ff59ada", size = 26421 },
     { url = "https://files.pythonhosted.org/packages/86/1c/9fa630272355af7e4446a2c7550c259f11ee422ab2d30ff90a0a71cf3d9e/multidict-6.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:aa466da5b15ccea564bdab9c89175c762bc12825f4659c11227f515cee76fa4a", size = 28791 },
     { url = "https://files.pythonhosted.org/packages/99/b7/b9e70fde2c0f0c9af4cc5277782a89b66d35948ea3369ec9f598358c3ac5/multidict-6.1.0-py3-none-any.whl", hash = "sha256:48e171e52d1c4d33888e529b999e5900356b9ae588c2f09a52dcefb158b27506", size = 10051 },
-]
-
-[[package]]
-name = "nest-asyncio"
-version = "1.6.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/83/f8/51569ac65d696c8ecbee95938f89d4abf00f47d58d48f6fbabfe8f0baefe/nest_asyncio-1.6.0.tar.gz", hash = "sha256:6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe", size = 7418 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl", hash = "sha256:87af6efd6b5e897c81050477ef65c62e2b2f35d51703cae01aff2905b1852e1c", size = 5195 },
 ]
 
 [[package]]
@@ -1109,22 +1091,6 @@ wheels = [
 ]
 
 [[package]]
-name = "unitycatalog-ai"
-version = "0.1.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "asyncio" },
-    { name = "nest-asyncio" },
-    { name = "pydantic" },
-    { name = "typing-extensions" },
-    { name = "unitycatalog-client" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/0d/12/2da71d7fe7e246a647b9286da1a9207ba889d19cbe60819bd68f9cd346db/unitycatalog_ai-0.1.0.tar.gz", hash = "sha256:87b8d0afb0c768c75abf9a9f1c7a1d37c96b3106428b3e9da2f6e334bb699f01", size = 36566 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a2/bc/9c1d79c6ebd3cf55f3810b503d3ebd74b10da9d174bf189fc6a331f84e31/unitycatalog_ai-0.1.0-py3-none-any.whl", hash = "sha256:54511a3b8086f8ade3d5e5c383eed539bbfee2ccc8676594b95c1b576f4cd23b", size = 43878 },
-]
-
-[[package]]
 name = "unitycatalog-client"
 version = "0.2.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1148,6 +1114,7 @@ source = { editable = "." }
 dependencies = [
     { name = "databricks-sdk" },
     { name = "typer" },
+    { name = "unitycatalog-client" },
 ]
 
 [package.dev-dependencies]
@@ -1157,13 +1124,13 @@ dev = [
     { name = "pytest-coverage" },
     { name = "ruff" },
     { name = "testcontainers" },
-    { name = "unitycatalog-pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "databricks-sdk", specifier = ">=0.41.0" },
     { name = "typer", specifier = ">=0.15.1" },
+    { name = "unitycatalog-client", specifier = ">=0.2.1" },
 ]
 
 [package.metadata.requires-dev]
@@ -1173,21 +1140,6 @@ dev = [
     { name = "pytest-coverage", specifier = ">=0.0" },
     { name = "ruff", specifier = ">=0.9.3" },
     { name = "testcontainers", specifier = ">=4.9.1" },
-    { name = "unitycatalog-pydantic", specifier = ">=0.1.0" },
-]
-
-[[package]]
-name = "unitycatalog-pydantic"
-version = "0.1.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "pydantic" },
-    { name = "unitycatalog-ai" },
-    { name = "unitycatalog-client" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/3d/4d/ef2ad2d34b6404711e74f15ba7126d99e53f394bd29f0892d36b64921de3/unitycatalog_pydantic-0.1.0.tar.gz", hash = "sha256:1e287d6e26bfe6fea7947cda9e32a13f3b8621d550927eabe83558e84ce89367", size = 86823 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/47/e7fcfc2aa22311e3be771aea8e4a3e8bcbe1ddc64e794e3079f56690d167/unitycatalog_pydantic-0.1.0-py3-none-any.whl", hash = "sha256:9cb374c8f06effe95937e869c285dddcf8ef4a4e635c1d6a332c120eea6e485f", size = 8558 },
 ]
 
 [[package]]

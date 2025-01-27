@@ -21,6 +21,7 @@ class SystemCatalogError(Exception):
     def __init__(self, message="Cannot migrate system catalog"):
         super().__init__(message)
 
+
 def get_token():
     return os.environ.get("UC_TOKEN")
 

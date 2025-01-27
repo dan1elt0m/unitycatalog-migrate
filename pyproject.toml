@@ -8,6 +8,7 @@ requires-python = ">=3.9"
 dependencies = [
     "databricks-sdk>=0.41.0",
     "typer>=0.15.1",
+    "unitycatalog-client>=0.2.1",
 ]
 
 [build-system]
@@ -24,5 +25,4 @@ dev = [
     "pytest-coverage>=0.0",
     "ruff>=0.9.3",
     "testcontainers>=4.9.1",
-    "unitycatalog-pydantic>=0.1.0",
 ]
