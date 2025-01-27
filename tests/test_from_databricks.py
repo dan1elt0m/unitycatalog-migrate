@@ -10,11 +10,7 @@ from databricks.sdk.service.catalog import (
     DataSourceFormat,
 )
 
-from unitycatalog_migrate.from_databricks import (
-    migrate_catalog,
-    migrate_schema,
-    migrate_table,
-)
+from unitycatalog_migrate.main import migrate_catalog, migrate_schema, migrate_table
 
 
 @pytest.mark.asyncio
