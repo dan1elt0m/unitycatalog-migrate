@@ -2,11 +2,9 @@
 name = "unitycatalog-migrate"
 version = "0.1.1"
 description = "Migrate catalogs from Databricks to Unity Catalog"
+keywords = ["databricks", "unitycatalog", "migration"]
 authors = [{name="Daniël Tom", email="d.e.tom89@gmail.com"}]
 readme = "README.md"
-Homepage = "https://github.com/dan1elt0m/unitycatalog-migrate"
-Repository = "https://github.com/dan1elt0m/unitycatalog-migrate"
-Documentation = "https://github.com/dan1elt0m/unitycatalog-migrate#readme"
 requires-python = ">=3.9"
 dependencies = [
     "databricks-sdk>=0.41.0",
@@ -15,8 +13,9 @@ dependencies = [
 ]
 
 license = {file = "LICENSE"}
-
-keywords = ["databricks", "unitycatalog", "migration"]
+Homepage = "https://github.com/dan1elt0m/unitycatalog-migrate"
+Repository = "https://github.com/dan1elt0m/unitycatalog-migrate"
+Documentation = "https://github.com/dan1elt0m/unitycatalog-migrate#readme"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
