@@ -24,13 +24,15 @@ ucm migrate-catalog NAMES... --profile <databricks-profile>
 
 ### Migrate Schemas
 ```shell
-ucm migrate-schema NAMES... --profile <databricks-profile> 
+ucm migrate-schema FULL_NAMES... --profile <databricks-profile> 
 ```
+where FULL_NAMES are in the format `catalog.schema`
 
 ### Migrate Tables
 ```shell
-ucm migrate-table NAMES..  --profile <databricks-profile>  
+ucm migrate-table FULL_NAMES..  --profile <databricks-profile>  
 ```
+where FULL_NAMES are in the format `catalog.schema.table`
 
 ## Configuration
 
