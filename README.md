@@ -3,10 +3,9 @@
 
 <p align="center">
     <b>🚀 UCM - OSS Unity Catalog Migration Assistant</b>
-</p>> 
+</p> 
 
 UCM is a CLI that provides commands for migrating catalogs, schemas, and tables from Databricks to Unity Catalog. 
-
 
 ## Requirements
 
@@ -18,7 +17,7 @@ UCM is a CLI that provides commands for migrating catalogs, schemas, and tables 
 To install the Unity Catalog Migrator, you can use the following commands:
 
 ```shell
-pip install unitycatalog-migrate
+pipx install unitycatalog-migrate
 ```
 
 ## Usage
