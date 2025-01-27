@@ -1,6 +1,6 @@
-# Unity Catalog Migrator
+# Unity Catalog Migrate
 
-Unity Catalog Migrator is a tool to migrate catalogs, schemas, and tables from Databricks to Unity Catalog.
+Migrate catalogs, schemas, and tables from Databricks to Unity Catalog.
 
 ## Requirements
 
@@ -18,8 +18,6 @@ pip install unitycatalog-migrate
 ## Usage
 
 ### Migrate Catalogs
-To migrate catalogs, use the following command:
-
 ```shell
 ucm migrate-catalog NAMES... --profile <databricks-profile> 
 ```
@@ -42,7 +40,7 @@ The Unity Catalog Migrator uses the following environment variables:
 
 ## Example
 ```shell
-# Use Databricks CLI to get tables from catalog1.schema1 and migrates
+# Use Databricks CLI to get tables 
 table_names=$(databricks tables list catalog1 schema1 --profile DATABRICKS_TEST | awk 'NR>1 {print $1}' | paste -sd ' ' -)
 
 # Migrate the tables to Unity Catalog using ucm
@@ -50,9 +48,12 @@ echo $table_names | xargs ucm migrate-table --profile DATABRICKS_TEST
 ```
 
 ## Remarks
+- Catalog and Schema need to exist in Unity Catalog before migrating tables
+
 ### Not supported:
 - system tables 
 - Variant datatype
 
 ## Contributing
-- Contributions are welcome. Fork and make a PR and I'll take a look asap.
+- Contributions are welcome. Please fork and make a PR and I'll take a look asap.
+- Star the repo if you like it.
