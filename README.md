@@ -24,19 +24,22 @@ ucm migrate-catalog NAMES... --profile <databricks-profile>
 
 ### Migrate Schemas
 ```shell
-ucm migrate-schema NAMES... --profile <databricks-profile> 
+ucm migrate-schema FULL_NAMES... --profile <databricks-profile> 
 ```
+where FULL_NAMES are in the format `catalog.schema`
 
 ### Migrate Tables
 ```shell
-ucm migrate-table NAMES..  --profile <databricks-profile>  
+ucm migrate-table FULL_NAMES..  --profile <databricks-profile>  
 ```
+where FULL_NAMES are in the format `catalog.schema.table`
 
 ## Configuration
 
 The Unity Catalog Migrator uses the following environment variables:
 - UC_HOST_URL: The URL of the Unity Catalog server. Default is `http://localhost:8080/api/2.1/unity-catalog`.
-- UC_TOKEN: The token to authenticate with the Unity Catalog server. Default is `None`.
+- UC_TOKEN: The token to authenticate with the Unity Catalog server. Default is `None`. You can also pass the token as
+    an argument to the command.
 
 ## Example
 ```shell
