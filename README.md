@@ -90,6 +90,9 @@ echo $table_names | xargs ucm migrate-table --profile DATABRICKS_TEST
 
 ```
 
+### Remarks
+- ucm skips already existing catalogs, schemas or tables (if desired, we can add a force option)
+
 ### Not supported:
 - system tables 
 - Variant datatype
